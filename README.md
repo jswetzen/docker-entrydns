@@ -1,6 +1,6 @@
-# docker-entrydns
+# entrydns-update
 
-Docker container for automatic IP updates with EntryDNS
+Docker container for automatic IP updates with EntryDNS.
 
 ## Usage
 

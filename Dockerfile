@@ -3,7 +3,6 @@ MAINTAINER Johan Swetzén <johan@swetzen.com>
 
 RUN apk add --no-cache curl
 
-ADD update_entrydns.sh /etc/periodic/hourly/update_entrydns.sh
-RUN chmod +x /etc/periodic/hourly/update_entrydns.sh
+ADD update_entrydns.sh /etc/periodic/hourly/update_entrydns
 
-CMD /etc/periodic/hourly/update_entrydns.sh && crond -f
+CMD /etc/periodic/hourly/update_entrydns && crond -f

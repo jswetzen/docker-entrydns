@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ([ -z "${AUTH_TOKEN}" ] && [ -z "${AUTH_TOKENS}" ]) && { echo "=> AUTH_TOKEN(S) cannot be empty" && exit 1; }
 

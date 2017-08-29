@@ -1,6 +1,6 @@
 #!/bin/bash
 
-([ -z "${AUTH_TOKEN}" ] && [ -z "${AUTH_TOKENS}" ]) && { echo "=> AUTH_TOKEN(S) cannot be empty" && exit 1; }
+([ -z "${AUTH_TOKEN}" ]) && { echo "=> AUTH_TOKEN cannot be empty" && exit 1; }
 
 updateIP() {
   local token="$1"
@@ -11,15 +11,12 @@ updateIP() {
 
 IPADDRESS=`curl -s icanhazip.com`
 if [[ "${IPADDRESS}" != "$(cat /current_ip)" ]]; then
-
-  if [[ "${AUTH_TOKENS}" ]]; then
-    if [ -n "${AUTH_TOKENS}" ]; then
-        declare part
-        while read -d "," part; do
-          updateIP $part
-        done <<< "${AUTH_TOKENS}"
-        updateIP $part
-    fi
+  if [[ "${AUTH_TOKEN}" ]]; then
+    declare part
+    while read -d "," part; do
+      updateIP $part
+    done <<< "${AUTH_TOKEN}"
+    updateIP $part
   else
     updateIP ${AUTH_TOKEN}
   fi

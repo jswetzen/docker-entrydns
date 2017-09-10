@@ -1,0 +1,8 @@
+# vim: ts=2:sw=2
+
+engines:
+  shellcheck:
+    enabled: true
+ratings:
+  paths:
+  - "**.sh"

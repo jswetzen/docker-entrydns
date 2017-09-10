@@ -9,6 +9,8 @@ update.
 
     docker run --rm -e "AUTH_TOKEN=abcdef...." jswetzen/entrydns-update
 
+Multiple A records? No problem. Just set `AUTH_TOKEN=token1,token2,...` instead.
+
 ## Details
 
 The public IP is fetched from [http://icanhazip.com](http://icanhazip.com) when

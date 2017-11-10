@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 MAINTAINER Johan Swetzén <johan@swetzen.com>
 
 RUN apk add --no-cache curl
